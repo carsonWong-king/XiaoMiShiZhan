@@ -21,6 +21,7 @@ export default {
     }
   },
   mounted(){
+
     /* CORS跨域 */
     //let url = "https://www/easy-mock.com/mock/5b012c1fe6e1035843cd3aff/mockapi/table/list";
     /* axios.get(url).then(()=>{
@@ -30,7 +31,13 @@ export default {
     /* 
       jsonp跨域(jsonp不是一个请求,它是一个js脚本,是正常访问一个接口),
       是不支持axios的
-     */
+    */
+    //let url = 'http://www.imooc.com/activity/servicetime';
+    //jsonp是有三个参数的,第一个是url,第二个是option参数配置(没有可省略),第三个是回调函数
+    /* jsonp(url,(err,res)=>{
+      let result = res;
+      this.data = result;
+    }) */
 
     /* 
       接口代理(前端修改,后台不动),支持任何方式实现请求,比如axios,更受
@@ -38,7 +45,7 @@ export default {
     */
     let url = '/api/activity/servicetime';  //api是虚拟的
     //jsonp是有三个参数的,第一个是url,第二个是option参数配置(没有可省略),第三个是回调函数
-    jsonp(url,(err,res)=>{  //第一个参数是报错信息,第二个是返回信息
+    jsonp(url,(err,res)=>{  //第一个err参数是报错信息,第二个res是返回信息
       let result = res;
       this.data = result;
     })
